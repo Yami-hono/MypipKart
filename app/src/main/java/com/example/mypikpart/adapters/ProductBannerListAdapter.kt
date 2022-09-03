@@ -1,46 +1,45 @@
-package com.example.mypipkart.adapter
+package com.example.mypikpart.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.mypipkart.R import com.example.mypipkart.database.TrendingProduct
-import com.example.mypipkart.databinding.LiTrendingProductsBinding
+import com.example.mypikpart.R
+import com.example.mypikpart.database.ProductBanner
+import com.example.mypikpart.databinding.LiProductBannerBinding
 
-class TrendingProductListAdapter: RecyclerView.Adapter<TrendingProductListAdapter.UserViewHolder>(){
+class ProductBannerListAdapter: RecyclerView.Adapter<ProductBannerListAdapter.UserViewHolder>(){
+    var data=ArrayList<ProductBanner>()
 
-    var data=ArrayList<TrendingProduct>()
-
-    fun setUpdatedList(data:ArrayList<TrendingProduct>){
+    fun setUpdatedList(data:ArrayList<ProductBanner>){
         this.data= data
         notifyDataSetChanged()
     }
 
-    inner class UserViewHolder(var binding: LiTrendingProductsBinding) :
+    inner class UserViewHolder(var binding: LiProductBannerBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(item: TrendingProduct) {
+        fun bind(item: ProductBanner) {
             with(binding) {
                 Glide.with(root.context)
                     .load(item.imageUrl)
-                    .circleCrop()
-                    .into(productImage)
-                discount.text= item.discount.toString()+"% OFF"
-                productName.text=item.name
+                    .fitCenter()
+                    .into(productBannerImage)
             }
         }
     }
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder {
-        val view = DataBindingUtil.inflate<LiTrendingProductsBinding>(
+        val view = DataBindingUtil.inflate<LiProductBannerBinding>(
             LayoutInflater.from(parent.context),
-            R.layout.li_trending_products,
+            R.layout.li_product_banner,
             parent,
             false
         )
         return UserViewHolder(view)
     }
+
 
     override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
         val searchResult = data.get(position)

@@ -1,4 +1,4 @@
-package com.example.mypipkart.database
+package com.example.mypikpart.database
 
 data class ApiRequest(
     val objectHash:ObjectHash,

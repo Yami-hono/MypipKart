@@ -1,11 +1,11 @@
-package com.example.mypipkart
+package com.example.mypikpart
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.applaunch.network.RetrofitInstance
-import com.example.mypipkart.database.*
-import com.example.mypipkart.network.NetworkService
+import com.example.mypikpart.network.RetrofitInstance
+import com.example.mypikpart.database.*
+import com.example.mypikpart.network.NetworkService
 import kotlinx.coroutines.launch
 import kotlin.Exception
 

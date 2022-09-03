@@ -1,4 +1,4 @@
-package com.example.mypipkart
+package com.example.mypikpart
 
 import org.junit.Test
 

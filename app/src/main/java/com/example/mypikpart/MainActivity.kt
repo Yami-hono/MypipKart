@@ -1,4 +1,4 @@
-package com.example.mypipkart
+package com.example.mypikpart
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -6,9 +6,9 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.mypipkart.adapter.ProductBannerListAdapter
-import com.example.mypipkart.adapter.TrendingProductListAdapter
-import com.example.mypipkart.databinding.ActivityMainBinding
+import com.example.mypikpart.adapter.ProductBannerListAdapter
+import com.example.mypikpart.adapter.TrendingProductListAdapter
+import com.example.mypikpart.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var productBannerAdapter:ProductBannerListAdapter
     private lateinit var trendingProductAdapter:TrendingProductListAdapter
 
-    lateinit var binding:ActivityMainBinding
+    lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
